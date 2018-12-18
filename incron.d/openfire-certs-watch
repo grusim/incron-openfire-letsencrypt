@@ -1,0 +1,1 @@
+/mounts/watchdirs/openfire-certs IN_ALL_EVENTS,IN_NO_LOOP /scripts/install-openfire-certs.sh -p $@ -f $# -e $%

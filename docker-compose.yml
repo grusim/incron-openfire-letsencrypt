@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  incron-app:
+    container_name: incron-cert-watcher-app
+    build: ./app
+    environment:
+      - OPENFIRE_DATA_DIR=${OPENFIRE_DATA_DIR}
+    volumes:
+      - ./incron.allow:/etc/incron.allow
+      - ./incron.d:/etc/incron.d
+      - ./scripts:/scripts
+      - /srv/docker/letsencrypt/certs/${OPENFIRE_HOSTNAME}:/mounts/watchdirs/openfire-certs
+      - /srv/docker/openfire:/mounts/targetdirs/openfire-dir
