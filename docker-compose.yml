@@ -5,10 +5,10 @@ services:
     build: ./app
     environment:
       - OPENFIRE_DATA_DIR=${OPENFIRE_DATA_DIR}
+      - INCRONUSER=${INCRONUSER}
     volumes:
       #functional bind mounts
       - ./incron.d:/etc/incron.d
-      - ./scripts:/scripts
       #individual bind mounts
       - /srv/docker/letsencrypt/certs/${OPENFIRE_HOSTNAME}:/mounts/watchdirs/openfire-certs
       - /srv/docker/openfire:/mounts/targetdirs/openfire-dir
