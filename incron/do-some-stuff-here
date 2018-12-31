@@ -1,0 +1,2 @@
+#do some stuff without root here in incron syntax
+/tmp IN_CREATE,IN_MODIFY,IN_NO_LOOP /scripts/test.sh
